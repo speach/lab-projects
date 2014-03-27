@@ -9,11 +9,13 @@ tbl <- tbl_df(dfx)
 # remove extreme outliers
 tbl <- tbl %.% filter(exseq < 50 & exseq > 0 & timing < 51)
 
+attach(tbl)
+
 # fourth order polynomical is good fit
-fit <- lm(exseq ~ poly(timing, 4, raw=TRUE), tbl)
+model <- lm(exseq ~ poly(timing, 4, raw=TRUE))
 
 gp <- ggplot(tbl, aes(x = timing, y = exseq,
-                      group = round_any(timing, 1.5)))
+                  group = round_any(timing, 3)))
 
 # boxplot per Trep
 gp + geom_boxplot(fill='grey') +
@@ -21,8 +23,8 @@ gp + geom_boxplot(fill='grey') +
   xlab('Trep') + 
   ylab('Ex-seq signal') + 
   theme_bw() +
-  geom_line(x=timing, 
-            y=predict(fit, data.frame(x=timing)), 
+  geom_line(x = timing, 
+            y = predict(model, data.frame(x=timing)), 
             col='red')
 
 
