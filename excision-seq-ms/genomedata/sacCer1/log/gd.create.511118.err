@@ -1,0 +1,6 @@
+>> Using temporary Genomedata archive: /tmp/genomedata.rgP7Qu
+>> 2014-03-30T08:30:06.979422: Loading sequence files:
+/vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa
+Could not find track file: /vol3/home/jhessel/devel/lab-projects/exicion-seq-ms/ncbi-geo/sacCer1/bedgraphs/CPD.rep1.bg.gz
+Error creating genomedata.
+>> Cleaning up... done

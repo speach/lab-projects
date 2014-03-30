@@ -1,0 +1,905 @@
+>> Using temporary Genomedata archive: /tmp/genomedata.7sg3wS
+>> 2014-03-30T08:10:13.135678: Loading sequence files:
+/vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa
+>> 2014-03-30T08:10:14.168232: Opening Genomedata archive with 9 tracks
+>> 2014-03-30T08:10:14.367392: Loading data
+zcat bedgraphs/CPD.rep1.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS cpd.rep1
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/CPD.rep2.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS cpd.rep2
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/6_4.rep1.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS 64.rep1
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ ignoring data beyond last supercontig (start: 666445)
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/6_4.rep2.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS 64.rep1
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/Afu_BG234_predig.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS udg.afu.bg234.predig
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/Afu_Y7092_predig.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS udg.afu.y7092.predig
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/UDG_postdig.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS udg.postdig
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/UDG_predig.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS udg.predig
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/ung1_5fu_predig.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS udg.ung1.5fu.postdig
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+zcat bedgraphs/ung1_predig.bg.gz | genomedata-load-data -v /tmp/genomedata.7sg3wS udg.ung1.postdig
+chr1
+ allocating memory for 230208 floats
+ reading 230208 floats... done
+ writing 230208floats... done
+chr10
+ allocating memory for 745446 floats
+ reading 745446 floats... done
+ writing 745446floats... done
+chr11
+ allocating memory for 666445 floats
+ reading 666445 floats... done
+ writing 666445floats... done
+chr12
+ allocating memory for 1078173 floats
+ reading 1078173 floats... done
+ writing 1078173floats... done
+chr13
+ allocating memory for 924430 floats
+ reading 924430 floats... done
+ writing 924430floats... done
+chr14
+ allocating memory for 784328 floats
+ reading 784328 floats... done
+ writing 784328floats... done
+chr15
+ allocating memory for 1091285 floats
+ reading 1091285 floats... done
+ writing 1091285floats... done
+chr16
+ allocating memory for 948060 floats
+ reading 948060 floats... done
+ writing 948060floats... done
+chr2
+ allocating memory for 813136 floats
+ reading 813136 floats... done
+ writing 813136floats... done
+chr3
+ allocating memory for 316613 floats
+ reading 316613 floats... done
+ writing 316613floats... done
+chr4
+ allocating memory for 1531914 floats
+ reading 1531914 floats... done
+ writing 1531914floats... done
+chr5
+ allocating memory for 576869 floats
+ reading 576869 floats... done
+ writing 576869floats... done
+chr6
+ allocating memory for 270148 floats
+ reading 270148 floats... done
+ writing 270148floats... done
+chr7
+ allocating memory for 1090944 floats
+ reading 1090944 floats... done
+ writing 1090944floats... done
+chr8
+ allocating memory for 562639 floats
+ reading 562639 floats... done
+ writing 562639floats... done
+chr9
+ allocating memory for 439885 floats
+ reading 439885 floats... done
+ writing 439885floats... done
+chrM
+ allocating memory for 85779 floats
+ reading 85779 floats... done
+ writing 85779floats... done
+writing metadata for chr1
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr10
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr11
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr12
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr13
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr14
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr15
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr16
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr2
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr3
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr4
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr5
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr6
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr7
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr8
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chr9
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+writing metadata for chrM
+ scanning supercontig_0
+  cpd.rep1
+  cpd.rep2
+  64.rep1
+  udg.afu.bg234.predig
+  udg.afu.y7092.predig
+  udg.postdig
+  udg.predig
+  udg.ung1.5fu.postdig
+  udg.ung1.postdig
+>> 2014-03-30T08:11:04.635692: Creating Genomedata archive: exseq.ms.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr14.genomedata -> exseq.ms.genomedata/chr14.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr11.genomedata -> exseq.ms.genomedata/chr11.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr4.genomedata -> exseq.ms.genomedata/chr4.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr16.genomedata -> exseq.ms.genomedata/chr16.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr8.genomedata -> exseq.ms.genomedata/chr8.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr7.genomedata -> exseq.ms.genomedata/chr7.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr1.genomedata -> exseq.ms.genomedata/chr1.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr6.genomedata -> exseq.ms.genomedata/chr6.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr2.genomedata -> exseq.ms.genomedata/chr2.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr13.genomedata -> exseq.ms.genomedata/chr13.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr15.genomedata -> exseq.ms.genomedata/chr15.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr10.genomedata -> exseq.ms.genomedata/chr10.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chrM.genomedata -> exseq.ms.genomedata/chrM.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr9.genomedata -> exseq.ms.genomedata/chr9.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr12.genomedata -> exseq.ms.genomedata/chr12.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr5.genomedata -> exseq.ms.genomedata/chr5.genomedata
+>> Repacking: /tmp/genomedata.7sg3wS/chr3.genomedata -> exseq.ms.genomedata/chr3.genomedata
+>> Cleaning up... done
+
+===== Genomedata archive successfully created: exseq.ms.genomedata =====
+

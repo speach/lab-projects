@@ -1,0 +1,77 @@
+Sender: LSF System <hpcadmin@compute01>
+Subject: Job 511119: <gd.create> Done
+
+Job <gd.create> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute01>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/genomedata/sacCer1> was used as the working directory.
+Started at Sun Mar 30 08:31:11 2014
+Results reported at Sun Mar 30 08:32:26 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J gd.create
+#BSUB -e log/gd.create.%J.err
+#BSUB -o log/gd.create.%J.out
+
+set -e
+
+PROJECT="$HOME/devel/lab-projects/excision-seq-ms"
+GEOBEDGRAPHS="$PROJECT/ncbi-geo/sacCer1/bedgraphs"
+MISCBEDGRAPHS="$PROJECT/stat-model/bedgraphs"
+
+GDARCHIVE="$PROJECT/genomedata/sacCer1/exseq.ms.genomedata"
+FASTA="$HOME/ref/genomes/sacCer1/sacCer1.fa"
+
+genomedata-load \
+    -t cpd.rep1="$GEOBEDGRAPHS/CPD.rep1.bg.gz" \
+    -t cpd.rep2="$GEOBEDGRAPHS/CPD.rep2.bg.gz" \
+    -t 64.rep1="$GEOBEDGRAPHS/6_4.rep1.bg.gz" \
+    -t 64.rep1="$GEOBEDGRAPHS/6_4.rep2.bg.gz" \
+    -t udg.afu.bg234.predig="$GEOBEDGRAPHS/Afu_BG234_predig.bg.gz" \
+    -t udg.afu.y7092.predig="$GEOBEDGRAPHS/Afu_Y7092_predig.bg.gz" \
+    -t udg.postdig="$GEOBEDGRAPHS/UDG_postdig.bg.gz" \
+    -t udg.predig="$GEOBEDGRAPHS/UDG_predig.bg.gz" \
+    -t udg.ung1.5fu.postdig="$GEOBEDGRAPHS/ung1_5fu_predig.bg.gz" \
+    -t udg.ung1.postdig="$GEOBEDGRAPHS/ung1_predig.bg.gz" \
+    -t rep.timing.yabuki="$MISCBEDGRAPHS/yabuki.timing.bedgraph.gz" \
+    -t rep.timing.raghu="$MISCBEDGRAPHS/raghu.timing.bedgraph.gz" \
+    -s $FASTA \
+    $GDARCHIVE \
+    --verbose
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :     77.34 sec.
+    Max Processes  :         6
+    Max Threads    :        39
+
+The output (if any) follows:
+
+>> Loading data for track: cpd.rep1
+>> Loading data for track: cpd.rep2
+>> Loading data for track: 64.rep1
+>> Loading data for track: 64.rep1
+>> Loading data for track: udg.afu.bg234.predig
+>> Loading data for track: udg.afu.y7092.predig
+>> Loading data for track: udg.postdig
+>> Loading data for track: udg.predig
+>> Loading data for track: udg.ung1.5fu.postdig
+>> Loading data for track: udg.ung1.postdig
+>> Loading data for track: rep.timing.yabuki
+>> Loading data for track: rep.timing.raghu
+
+
+PS:
+
+Read file <log/gd.create.511119.err> for stderr output of this job.
+
