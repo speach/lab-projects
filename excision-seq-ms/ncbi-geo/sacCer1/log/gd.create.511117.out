@@ -1,0 +1,68 @@
+Sender: LSF System <hpcadmin@compute01>
+Subject: Job 511117: <gd.create> Done
+
+Job <gd.create> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute01>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/ncbi-geo/sacCer1> was used as the working directory.
+Started at Sun Mar 30 08:10:12 2014
+Results reported at Sun Mar 30 08:11:22 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J gd.create
+#BSUB -e log/gd.create.%J.err
+#BSUB -o log/gd.create.%J.out
+
+set -e
+
+GDARCHIVE="exseq.ms.genomedata"
+FASTA="$HOME/ref/genomes/sacCer1/sacCer1.fa"
+
+genomedata-load \
+    -t cpd.rep1="bedgraphs/CPD.rep1.bg.gz" \
+    -t cpd.rep2="bedgraphs/CPD.rep2.bg.gz" \
+    -t 64.rep1="bedgraphs/6_4.rep1.bg.gz" \
+    -t 64.rep1="bedgraphs/6_4.rep2.bg.gz" \
+    -t udg.afu.bg234.predig="bedgraphs/Afu_BG234_predig.bg.gz" \
+    -t udg.afu.y7092.predig="bedgraphs/Afu_Y7092_predig.bg.gz" \
+    -t udg.postdig="bedgraphs/UDG_postdig.bg.gz" \
+    -t udg.predig="bedgraphs/UDG_predig.bg.gz" \
+    -t udg.ung1.5fu.postdig="bedgraphs/ung1_5fu_predig.bg.gz" \
+    -t udg.ung1.postdig="bedgraphs/ung1_predig.bg.gz" \
+    -s $FASTA \
+    $GDARCHIVE \
+    --verbose
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :     69.73 sec.
+    Max Processes  :         6
+    Max Threads    :        39
+
+The output (if any) follows:
+
+>> Loading data for track: cpd.rep1
+>> Loading data for track: cpd.rep2
+>> Loading data for track: 64.rep1
+>> Loading data for track: 64.rep1
+>> Loading data for track: udg.afu.bg234.predig
+>> Loading data for track: udg.afu.y7092.predig
+>> Loading data for track: udg.postdig
+>> Loading data for track: udg.predig
+>> Loading data for track: udg.ung1.5fu.postdig
+>> Loading data for track: udg.ung1.postdig
+
+
+PS:
+
+Read file <log/gd.create.511117.err> for stderr output of this job.
+
