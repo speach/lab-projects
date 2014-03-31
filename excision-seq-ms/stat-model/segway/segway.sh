@@ -4,11 +4,28 @@
 #BSUB -o log/segway.master.%J.out
 #BSUB -e log/segway.master.%J.err
 
-PROJECT="$HOME/devel/lab-projects/exicion-seq-ms"
+set -o nounset -o pipefail -o errexit -x
+
+PROJECT="$HOME/devel/lab-projects/excision-seq-ms"
 GDARCHIVE="$PROJECT/genomedata/sacCer1/exseq.ms.genomedata"
 
+<<TRACKNAMES
+cpd.rep1
+cpd.rep2
+64.rep1
+udg.afu.bg234.predig
+udg.afu.y7092.predig
+udg.postdig
+udg.predig
+udg.ung1.5fu.postdig
+udg.ung1.postdig
+rep.timing.yabuki
+rep.timing.raghu
+TRACKNAMES
+
 NUM_LABELS=8
-TRACKSPEC="-t yabuki.timing -t udg -t sheared"
+TRACKSPEC="-t udg.postdig -t udg.predig -t rep.timing.raghu
+-t udg.ung1.5fu.postdig"
 COMMONSPEC="--num-labels=$NUM_LABELS $TRACKSPEC"
 
 INCLUDEFILENAME="includes/include.bed"
@@ -24,9 +41,13 @@ VARSPEC="--resolution=$RESOLUTION --ruler-scale=$RULER_SCALE
 
 PRIOR_STRENGTH=1000
 
+RESULTS="$PROJECT/stat-model/segway/labels-$NUM_LABELS-resolution-$RESOLUTION"
+if [[ ! -d $RESULTS ]]; then
+    mkdir -p $RESULTS
+fi
+
 TRAINDIRNAME="$RESULTS/train"
 IDENTIFYDIRNAME="$RESULTS/identify"
-RESULTS="$PROJECT/stat-model/segway/labels-$NUM_LABELS-resolution-$RESOLUTION"
 
 segway train $GDARCHIVE $TRAINDIRNAME \
     $COMMONSPEC $REGIONSPEC \
