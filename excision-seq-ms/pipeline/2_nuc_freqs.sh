@@ -52,7 +52,7 @@ for ig_idx in ${!ignore_modes[@]}; do
                 $ignore_arg \
                 --verbose >> $output"
 
-            jobid="nf_calc.$LSB_JOBID.$LSB_JOBINDEX"
+            jobid="nf_calc.size-$size.$LSB_JOBID.$LSB_JOBINDEX"
             bsub -J $jobid \
                  -o "log/nf_calc.$LSB_JOBID.$LSB_JOBINDEX.out" \
                  -e "log/nf_calc.$LSB_JOBID.$LSB_JOBINDEX.err" \
