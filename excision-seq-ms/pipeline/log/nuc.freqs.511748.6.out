@@ -1,0 +1,84 @@
+Sender: LSF System <hpcadmin@compute07>
+Subject: Job 511748[6]: <nuc.counts[1-10]> Exited
+
+Job <nuc.counts[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute07>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 19:15:55 2014
+Results reported at Tue Apr  1 19:15:55 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J nuc.counts[1-10]
+#BSUB -o log/nuc.freqs.%J.%I.out
+#BSUB -e log/nuc.freqs.%J.%I.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+
+if [[ $ASSEMBLY == "sacCer2" ]]; then
+    ignore_modes=("all" "only-mito" "no-mito" "only-2micron")
+    ignore_args=("" "--only-chrom chrM"
+                 "--ignore-chrom chrM"
+                 "--only-chrom 2micron")
+else
+    ignore_modes=("all" "only-mito" "no-mito")
+    ignore_args=("" "--only-chrom chrM"
+                 "--ignore-chrom chrM")
+fi
+
+# mono, di and trinucleotides
+sizes="1 2 3"
+
+bedgraphs=$RESULT/$sample/bedgraphs
+results=$RESULT/$sample/nuc_freqs
+
+if [[ ! -d $results ]]; then
+    mkdir -p $results
+fi
+
+posbedgraph=$bedgraphs/$sample.strand.pos.counts.bg
+negbedgraph=$bedgraphs/$sample.strand.neg.counts.bg
+
+for ig_idx in ${!ignore_modes[@]}; do
+
+    ignore_mode=${ignore_modes[$ig_idx]}
+    ignore_arg=${ignore_args[$ig_idx]}
+
+    output="$results/$sample.ignore.$ignore_mode.nuc_freqs.tab"
+
+    if [[ ! -f "$output.gz" ]]; then
+        for size in $sizes; do
+            python $BIN/nuc_frequencies.py \
+                --region-size $size \
+                -p $posbedgraph \
+                -n $negbedgraph \
+                -f $FASTA \
+
+(... more ...)
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time   :      0.02 sec.
+    Max Processes  :         1
+    Max Threads    :         1
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/nuc.freqs.511748.6.err> for stderr output of this job.
+

@@ -1,0 +1,82 @@
++ source config.sh
+++ SAMPLES=(6_4.rep1 Afu_BG234_predig CPD.rep1 UDG_predig ung1_predig 6_4.rep2 Afu_Y7092_predig CPD.rep2 UDG_postdig ung1_5fu_predig)
+++ PROJECT=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms
+++ FASTQDIR=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/ncbi-geo/fastq
+++ ASSEMBLY=sacCer1
+++ BOWTIEINDEX=/vol3/home/jhessel/ref/genomes/sacCer1/sacCer1
+++ CHROM_SIZES=/vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.chrom.sizes
+++ FASTA=/vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa
+++ RESULT=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1
+++ LOG=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/log
+++ BIN=/vol3/home/jhessel/devel/modmap/modmap
+++ RSCRIPTS=/vol3/home/jhessel/devel/modmap/R
++ sample=ung1_5fu_predig
++ [[ sacCer1 == \s\a\c\C\e\r\2 ]]
++ ignore_modes=("all" "only-mito" "no-mito")
++ ignore_args=("" "--only-chrom chrM" "--ignore-chrom chrM")
++ sizes='1 2 3'
++ bedgraphs=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs
++ results=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/nuc_freqs
++ [[ ! -d /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/nuc_freqs ]]
++ posbedgraph=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg
++ negbedgraph=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg
++ for ig_idx in '${!ignore_modes[@]}'
++ ignore_mode=all
++ ignore_arg=
++ output=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/nuc_freqs/ung1_5fu_predig.ignore.all.nuc_freqs.tab
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 1 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --verbose
+>> analyzing sequences ...
+>> ignore:() only:()
+>> offset range: -15 to 15
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 2 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --verbose
+>> analyzing sequences ...
+>> ignore:() only:()
+>> offset range: -15 to 15
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 3 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --verbose
+>> analyzing sequences ...
+>> ignore:() only:()
+>> offset range: -15 to 15
++ gzip /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/nuc_freqs/ung1_5fu_predig.ignore.all.nuc_freqs.tab
++ for ig_idx in '${!ignore_modes[@]}'
++ ignore_mode=only-mito
++ ignore_arg='--only-chrom chrM'
++ output=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/nuc_freqs/ung1_5fu_predig.ignore.only-mito.nuc_freqs.tab
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 1 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --only-chrom chrM --verbose
+>> analyzing sequences ...
+>> ignore:() only:('chrM',)
+>> offset range: -15 to 15
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 2 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --only-chrom chrM --verbose
+>> analyzing sequences ...
+>> ignore:() only:('chrM',)
+>> offset range: -15 to 15
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 3 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --only-chrom chrM --verbose
+>> analyzing sequences ...
+>> ignore:() only:('chrM',)
+>> offset range: -15 to 15
++ gzip /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/nuc_freqs/ung1_5fu_predig.ignore.only-mito.nuc_freqs.tab
++ for ig_idx in '${!ignore_modes[@]}'
++ ignore_mode=no-mito
++ ignore_arg='--ignore-chrom chrM'
++ output=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/nuc_freqs/ung1_5fu_predig.ignore.no-mito.nuc_freqs.tab
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 1 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --ignore-chrom chrM --verbose
+>> analyzing sequences ...
+>> ignore:('chrM',) only:()
+>> offset range: -15 to 15
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 2 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --ignore-chrom chrM --verbose
+>> analyzing sequences ...
+>> ignore:('chrM',) only:()
+>> offset range: -15 to 15
++ for size in '$sizes'
++ python /vol3/home/jhessel/devel/modmap/modmap/nuc_frequencies.py --region-size 3 -p /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.pos.counts.bg -n /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/bedgraphs/ung1_5fu_predig.strand.neg.counts.bg -f /vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa --ignore-chrom chrM --verbose
+>> analyzing sequences ...
+>> ignore:('chrM',) only:()
+>> offset range: -15 to 15
++ gzip /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/ung1_5fu_predig/nuc_freqs/ung1_5fu_predig.ignore.no-mito.nuc_freqs.tab

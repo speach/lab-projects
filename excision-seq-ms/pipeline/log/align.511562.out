@@ -1,0 +1,870 @@
+Sender: LSF System <hpcadmin@compute01>
+Subject: Job 511562[9]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute01>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:19:59 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    289.96 sec.
+    Max Memory :         1 GB
+    Max Swap   :         1 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute02>
+Subject: Job 511562[10]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute02>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:25:24 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    624.67 sec.
+    Max Memory :         2 GB
+    Max Swap   :         2 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute11>
+Subject: Job 511562[6]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute11>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:27:20 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    742.58 sec.
+    Max Memory :         2 GB
+    Max Swap   :         2 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute03>
+Subject: Job 511562[1]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute03>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:27:44 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    824.00 sec.
+    Max Memory :         1 GB
+    Max Swap   :         1 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute09>
+Subject: Job 511562[4]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute09>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:28:39 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    833.33 sec.
+    Max Memory :         4 GB
+    Max Swap   :         4 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute10>
+Subject: Job 511562[5]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute10>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:30:28 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    944.28 sec.
+    Max Memory :         3 GB
+    Max Swap   :         3 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute05>
+Subject: Job 511562[8]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute05>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:30:33 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    946.41 sec.
+    Max Memory :         4 GB
+    Max Swap   :         4 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute07>
+Subject: Job 511562[3]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute07>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:31:26 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :   1054.00 sec.
+    Max Memory :         2 GB
+    Max Swap   :         2 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute04>
+Subject: Job 511562[2]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute04>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:46:19 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :   1934.22 sec.
+    Max Memory :         7 GB
+    Max Swap   :         7 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+
+Sender: LSF System <hpcadmin@compute12>
+Subject: Job 511562[7]: <align[1-10]> Done
+
+Job <align[1-10]> was submitted from host <amc-tesla> by user <jhessel> in cluster <amctesla_cluster1>.
+Job was executed on host(s) <compute12>, in queue <normal>, as user <jhessel> in cluster <amctesla_cluster1>.
+</vol3/home/jhessel> was used as the home directory.
+</vol3/home/jhessel/devel/lab-projects/excision-seq-ms/pipeline> was used as the working directory.
+Started at Tue Apr  1 09:15:17 2014
+Results reported at Tue Apr  1 09:50:31 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#! /usr/bin/env bash
+
+#BSUB -J align[1-10]
+#BSUB -o log/align.%J.out
+#BSUB -e log/align.%J.err
+
+set -o nounset -o pipefail -o errexit -x
+
+source config.sh
+
+sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
+fastq="$FASTQDIR/$sample.fastq.gz"
+
+alnresults=$RESULT/$sample/alignments
+bgresults=$RESULT/$sample/bedgraphs
+
+if [[ ! -d $alnresults ]]; then
+    mkdir -p $alnresults
+fi
+if [[ ! -d $bgresults ]]; then
+    mkdir -p $bgresults
+fi
+
+bam=$alnresults/$sample.bam
+
+stats=$alnresults/$sample.stats.txt
+
+if [[ ! -f $bam ]]; then
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        2> $stats \
+        | samtools view -ShuF4 - \
+        | samtools sort -o - $sample.temp -m 8G \
+        > $bam
+    samtools index $bam
+fi
+
+strands=("both" "pos" "neg")
+strandargs=("" "-strand +" "-strand -")
+
+for sidx in ${!strands[@]}; do
+    strand=${strands[$sidx]}
+    strandarg=${strandargs[$sidx]}
+
+    bedgraph=$bgresults/$sample.strand.$strand.counts.bg
+
+    bedtools genomecov -5 -bg \
+        -g $CHROM_SIZES -ibam $bam \
+        $strandarg \
+        > $bedgraph
+done
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :   2216.46 sec.
+    Max Memory :         8 GB
+    Max Swap   :         8 GB
+
+    Max Processes  :         9
+    Max Threads    :        11
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <log/align.511562.err> for stderr output of this job.
+

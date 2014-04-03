@@ -1,0 +1,29 @@
++ source config.sh
+++ SAMPLES=(6_4.rep1 Afu_BG234_predig CPD.rep1 UDG_predig ung1_predig 6_4.rep2 Afu_Y7092_predig CPD.rep2 UDG_postdig ung1_5fu_predig)
+++ PROJECT=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms
+++ FASTQDIR=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/ncbi-geo/fastq
+++ ASSEMBLY=sacCer1
+++ BOWTIEINDEX=/vol3/home/jhessel/ref/genomes/sacCer1/sacCer1
+++ CHROM_SIZES=/vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.chrom.sizes
+++ FASTA=/vol3/home/jhessel/ref/genomes/sacCer1/sacCer1.fa
+++ RESULT=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1
+++ LOG=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/log
+++ BIN=/vol3/home/jhessel/devel/modmap/modmap
+++ RSCRIPTS=/vol3/home/jhessel/devel/modmap/R
++ sample=6_4.rep2
++ [[ sacCer1 == \s\a\c\C\e\r\2 ]]
++ ignore_modes=("all" "only-mito" "no-mito")
++ ignore_args=("" "--only-chrom chrM" "--ignore-chrom chrM")
++ sizes='1 2 3'
++ bedgraphs=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/bedgraphs
++ results=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/nuc_freqs
++ [[ ! -d /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/nuc_freqs ]]
++ posbedgraph=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/bedgraphs/6_4.rep2.strand.pos.counts.bg
++ negbedgraph=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/bedgraphs/6_4.rep2.strand.neg.counts.bg
++ for ig_idx in '${!ignore_modes[@]}'
++ ignore_mode=all
++ ignore_arg=
++ output=/vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/nuc_freqs/6_4.rep2.ignore.all.nuc_freqs.tab
++ [[ ! -f /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/nuc_freqs/6_4.rep2.ignore.all.nuc_freqs.tab.gz ]]
++ gzip /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/nuc_freqs/6_4.rep2.ignore.all.nuc_freqs.tab
+gzip: /vol3/home/jhessel/devel/lab-projects/excision-seq-ms/results/sacCer1/6_4.rep2/nuc_freqs/6_4.rep2.ignore.all.nuc_freqs.tab: No such file or directory
