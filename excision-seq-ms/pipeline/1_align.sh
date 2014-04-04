@@ -28,8 +28,10 @@ bam=$alnresults/$sample.bam
 
 stats=$alnresults/$sample.stats.txt
 
+# no trimming needed, 5' ``T`` is accounted for by sequencing primer
 if [[ ! -f $bam ]]; then
-    bowtie2 -U $fastq -x $BOWTIEINDEX --threads $NUM_THREADS \
+    bowtie2 -U $fastq -x $BOWTIEINDEX \
+        --threads $NUM_THREADS \
         2> $stats \
         | samtools view -ShuF4 - \
         | samtools sort -o - $sample.temp -m 8G \
