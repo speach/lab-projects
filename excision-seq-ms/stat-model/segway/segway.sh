@@ -51,12 +51,11 @@ IDENTIFYDIRNAME="$RESULTS/identify"
 
 segway train $GDARCHIVE $TRAINDIRNAME \
     $COMMONSPEC $REGIONSPEC \
-    $VARSPEC \
-    --prior-strength=$PRIOR_STRENGTH \
-    --split-sequences=250000
+    $VARSPEC
 
 segway identify $GDARCHIVE $TRAINDIRNAME $IDENTIFYDIRNAME \
-    $COMMONSPEC $REGIONSPEC \
+    $COMMONSPEC \
+    --exclude-coords=$EXCLUDEFILENAME \
     $VARSPEC \
    -i "$TRAINDIRNAME/params/input.master" \
    -p "$TRAINDIRNAME/params/params.params" \
