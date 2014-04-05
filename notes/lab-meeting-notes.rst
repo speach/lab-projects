@@ -40,4 +40,27 @@ Suzi
 
 - Borornate depletion of NTPs from mixtures.
 
+Lab meeting
+-----------
 
+:Date: Fri Apr  4 09:40:41 MDT 2014
+:Presenter: Monty P.
+
+Peptide sequencing project.
+
+TCO / tetrazine immobilization
+
+Super resolution approach.
+
+Protein extension experiment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ + using glucose oxidase, Alexa 647 maleimide 
+ + non-specific adsorption to flow cell surface
+ + 6 M guanidine
+ 
+ + questions: how do you know we're getting protein-dependent signal? 
+
+ + Will move to STP to try C-terminal derivs
+
+ + STORM demo 
