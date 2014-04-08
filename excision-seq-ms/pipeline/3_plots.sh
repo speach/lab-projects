@@ -44,7 +44,7 @@ for ig_idx in ${!ignore_modes[@]}; do
 
         counts="$results/nuc_freqs/$sample.ignore.$ignore_mode.nuc_freqs.tab.gz"
         sampleid="$sample.subset-$ignore_mode"
-        Rscript $RSCRIPTS/nuc.freqs.R $counts "$sampleid" $plot_type $subplotdir
+        Rscript --vanilla $RSCRIPTS/nuc.freqs.R $counts "$sampleid" $plot_type $subplotdir
 
     done
 done

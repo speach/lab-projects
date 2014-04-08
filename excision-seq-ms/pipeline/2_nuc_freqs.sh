@@ -31,8 +31,8 @@ if [[ ! -d $results ]]; then
     mkdir -p $results
 fi
 
-posbedgraph=$bedgraphs/$sample.strand.pos.counts.bg
-negbedgraph=$bedgraphs/$sample.strand.neg.counts.bg
+posbedgraph="$bedgraphs/$sample.strand.pos.counts.bg.gz"
+negbedgraph="$bedgraphs/$sample.strand.neg.counts.bg.gz"
 
 for ig_idx in ${!ignore_modes[@]}; do
 
