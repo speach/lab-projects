@@ -13,12 +13,12 @@ sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
 if [[ $ASSEMBLY == "sacCer2" ]]; then
     include_modes=("all" "only-mito" "no-mito" "only-2micron")
     include_args=("" "--only-chrom chrM"
-                 "--include-chrom chrM"
+                 "--ignore-chrom chrM"
                  "--only-chrom 2micron")
 else
     include_modes=("all" "only-mito" "no-mito")
     include_args=("" "--only-chrom chrM"
-                 "--include-chrom chrM")
+                 "--ignore-chrom chrM")
 fi
 
 # mono, di and trinucleotides
