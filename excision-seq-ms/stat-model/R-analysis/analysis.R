@@ -1,5 +1,4 @@
 library(dplyr)
-library(plyr)
 library(ggplot2)
 
 colnames = c('chrom','start','end','timing','exseq')
@@ -7,7 +6,7 @@ dfx <- read.table('raghu.timing.uracil.post.exseq.tab.gz', col.names=colnames)
 tbl <- tbl_df(dfx)
 
 # remove extreme outliers
-tbl <- tbl %.% filter(exseq < 50 & exseq > 0 & timing < 51)
+tbl <- tbl %.% filter(exseq < 50 & exseq > 0 & timing < 49)
 
 attach(tbl)
 
@@ -19,12 +18,12 @@ gp <- ggplot(tbl, aes(x = timing, y = exseq,
 
 # boxplot per Trep
 gp + geom_boxplot(fill='grey') +
-  ggtitle('Raghu / post-dig uracil Ex-seq') + 
-  xlab('Trep') + 
-  ylab('Ex-seq signal') + 
-  theme_bw() +
-  geom_line(x = timing, 
+      ggtitle('Raghu / post-dig uracil Ex-seq') + 
+      xlab('Trep') + 
+      ylab('Ex-seq signal') + 
+      geom_line(x = timing, 
             y = predict(model, data.frame(x=timing)), 
-            col='red')
+            col='red',
+            size=1)
 
-
+# ggsave('reptiming-exset-boxplot.pdf')
