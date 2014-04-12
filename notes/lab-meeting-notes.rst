@@ -64,3 +64,21 @@ Protein extension experiment
  + Will move to STP to try C-terminal derivs
 
  + STORM demo 
+
+Lab meeting
+-----------
+:Date: Fri Apr 11 09:35:24 MDT 2014
+:Presenter: Monica
+
++ maybe treat dut ung yeast with UV to look at dimers in UU dimers.
+
++ CC to TT transitions are most common UV-associateed mutations.
+
++ Photolyase and NER. NER cuts up and downstream. 
+
++ want to understand correlation between UV damage and mutation.
+
++ Circularization approaches work for UV (no uracil yet). Added steps for
+  isolation of DNA with photoproducts by antibody enrichment.
+
++ using UVB laser diode to irradiate.
