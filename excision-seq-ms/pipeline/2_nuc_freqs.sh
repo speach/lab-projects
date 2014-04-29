@@ -11,18 +11,21 @@ source config.sh
 sample=${SAMPLES[$(($LSB_JOBINDEX - 1))]}
 
 if [[ $ASSEMBLY == "sacCer2" ]]; then
-    ignore_modes=("all" "only-mito" "no-mito" "only-2micron")
-    ignore_args=("" "--only-chrom chrM"
+    include_modes=("all" "only-mito" "no-mito" "only-2micron")
+    include_args=("" "--only-chrom chrM"
                  "--ignore-chrom chrM"
                  "--only-chrom 2micron")
 else
-    ignore_modes=("all" "only-mito" "no-mito")
-    ignore_args=("" "--only-chrom chrM"
+    include_modes=("all" "only-mito" "no-mito")
+    include_args=("" "--only-chrom chrM"
                  "--ignore-chrom chrM")
 fi
 
 # mono, di and trinucleotides
 sizes="1 2 3"
+
+# count thresholds
+count_thresh="1 10 30"
 
 bedgraphs=$RESULT/$sample/bedgraphs
 results=$RESULT/$sample/nuc_freqs
@@ -31,34 +34,40 @@ if [[ ! -d $results ]]; then
     mkdir -p $results
 fi
 
-posbedgraph=$bedgraphs/$sample.strand.pos.counts.bg
-negbedgraph=$bedgraphs/$sample.strand.neg.counts.bg
+posbedgraph="$bedgraphs/$sample.strand.pos.counts.bg.gz"
+negbedgraph="$bedgraphs/$sample.strand.neg.counts.bg.gz"
 
-for ig_idx in ${!ignore_modes[@]}; do
+for inc_idx in ${!include_modes[@]}; do
 
-    ignore_mode=${ignore_modes[$ig_idx]}
-    ignore_arg=${ignore_args[$ig_idx]}
+    include_mode=${include_modes[$inc_idx]}
+    include_arg=${include_args[$inc_idx]}
 
-    output="$results/$sample.ignore.$ignore_mode.nuc_freqs.tab"
+    for mincount in $count_thresh; do
 
-    if [[ ! -f "$output.gz" ]]; then
-        for size in $sizes; do
+        output="$results/$sample.include.$include_mode.mincount.$mincount.nuc_freqs.tab"
 
-            cmd="python $BIN/nuc_frequencies.py \
-                --region-size $size \
-                -p $posbedgraph \
-                -n $negbedgraph \
-                -f $FASTA \
-                $ignore_arg \
-                --verbose >> $output"
+        if [[ ! -f "$output.gz" ]]; then
+            for size in $sizes; do
 
-            jobid="nf_calc.$LSB_JOBID.$LSB_JOBINDEX"
-            bsub -J $jobid \
-                 -o "log/nf_calc.$LSB_JOBID.$LSB_JOBINDEX.out" \
-                 -e "log/nf_calc.$LSB_JOBID.$LSB_JOBINDEX.err" \
-                 $cmd
-        done
-        bsub -J "gzip.$jobid" -w "done($jobid)" "gzip $output"
-    fi
+                cmd="python $BIN/nuc_frequencies.py \
+                    --region-size $size \
+                    --minimum-counts $mincount \
+                    -p $posbedgraph \
+                    -n $negbedgraph \
+                    -f $FASTA \
+                    $include_arg \
+                    --verbose >> $output"
+
+                jobid="nf_calc.$LSB_JOBID.$LSB_JOBINDEX"
+                bsub -J $jobid \
+                     -o "log/nf_calc.$LSB_JOBID.$LSB_JOBINDEX.out" \
+                     -e "log/nf_calc.$LSB_JOBID.$LSB_JOBINDEX.err" \
+                     $cmd
+            done
+            # gzip file
+            bsub -o /dev/null -e /dev/null \
+                -J "gzip.$jobid" -w "done($jobid)" "gzip $output"
+        fi
+    done
 done
 

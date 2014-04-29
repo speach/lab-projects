@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 
 #BSUB -J align[1-10]
-#BSUB -o log/align.%J.out
-#BSUB -e log/align.%J.err
+#BSUB -o log/align.%J.%I.out
+#BSUB -e log/align.%J.%I.err
 #BSUB -n 8
 
 set -o nounset -o pipefail -o errexit -x
@@ -52,5 +52,6 @@ for sidx in ${!strands[@]}; do
         -g $CHROM_SIZES -ibam $bam \
         $strandarg \
         > $bedgraph
+    gzip $bedgraph
 done
 
