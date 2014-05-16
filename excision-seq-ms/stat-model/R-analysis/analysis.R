@@ -4,6 +4,8 @@ library(ggplot2)
 
 colnames = c('chrom','start','end','timing','exseq')
 dfx <- read.table('raghu.timing.uracil.post.exseq.tab.gz', col.names=colnames)
+# dfx <- read.table('raghu.timing.gc-content.tab.gz', col.names=colnames)
+
 tbl <- tbl_df(dfx)
 
 # remove extreme outliers

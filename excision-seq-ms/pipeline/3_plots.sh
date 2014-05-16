@@ -18,13 +18,8 @@ results=$RESULT/$sample
 plotdir=$results/plots
 if [[ $ASSEMBLY == "sacCer2" ]]; then
     include_modes=("all" "only-mito" "no-mito" "only-2micron")
-    include_args=("" "--only-chrom chrM"
-                 "--include-chrom chrM"
-                 "--only-chrom 2micron")
 else
     include_modes=("all" "only-mito" "no-mito")
-    include_args=("" "--only-chrom chrM"
-                 "--include-chrom chrM")
 fi
 
 # count thresholds
@@ -37,18 +32,17 @@ for inc_idx in ${!include_modes[@]}; do
     # -------------------------------------------------------
     # --- nuc_freq plots ------------------------------------
     for mincount in $count_thresh; do
-        output="$results/$sample.include.$include_mode.mincount.$mincount.nuc_freqs.tab"
 
         plottypes=("hist" "scatter")
         for plot_type in ${plottypes[@]}; do
 
-            subplotdir="$plotdir/nuc_freqs/$plot_type"
+            subplotdir="$plotdir/nuc_freqs/$plot_type/min-count-$mincount"
             if [[ ! -d $subplotdir ]]; then
                 mkdir -p $subplotdir
             fi
 
-            counts="$results/$sample.include.$include_mode.mincount.$mincount.nuc_freqs.tab"
-            sampleid="$sample.subset-$ignore_mode"
+            counts="$results/nuc_freqs/$sample.include.$include_mode.mincount.$mincount.nuc_freqs.tab.gz"
+            sampleid="$sample.subset-$include_mode"
             Rscript --vanilla $RSCRIPTS/nuc.freqs.R $counts "$sampleid" $plot_type $subplotdir
         done
     done

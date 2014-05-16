@@ -31,7 +31,7 @@ COMMONSPEC="--num-labels=$NUM_LABELS $TRACKSPEC"
 INCLUDEFILENAME="includes/include.bed"
 EXCLUDEFILENAME="includes/exclude.bed"
 REGIONSPEC="--include-coords=$INCLUDEFILENAME
---exclude-coords=$EXCLUDEFILENAME"
+            --exclude-coords=$EXCLUDEFILENAME"
 
 SEGTABLEFILENAME="includes/seg_table.tab"
 RESOLUTION=500

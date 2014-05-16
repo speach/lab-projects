@@ -24,8 +24,6 @@ Austin
 - WTF HITS CLIP. Check adaptor sequences / protocols / data from other
   published CLIP studies
  
-- :wq
-
 Lab meeting 2014-03-21
 ----------------------
 
@@ -87,4 +85,20 @@ Sally Update Talk
 -----------------
 :Date:  Thu Apr 24 12:50:06 MDT 2014
 
-+  
+Lab meeting
+-----------
+:Date: Fri Apr 18 09:37:09 MDT 2014
+:Presenter: Sally
+
++ 5'-OH RNA mapping
+
++ Can't map it until now
+
++ Ire1 / RNase L
+
++ known turnover pathway
+
++ Clp1 mouse
+
++ Monica does methylation / demethylation
+

@@ -25,6 +25,8 @@ genomedata-load \
     -t udg.ung1.postdig="$GEOBEDGRAPHS/ung1_predig.bg.gz" \
     -t rep.timing.yabuki="$MISCBEDGRAPHS/yabuki.timing.bedgraph.gz" \
     -t rep.timing.raghu="$MISCBEDGRAPHS/raghu.timing.bedgraph.gz" \
+    -t dnasei="$MISCBEDGRAPHS/dnasei.bedgraph.gz" \
+    -t mrna.levels="$MISCBEDGRAPHS/regev.combined.logscores.bedgraph.gz" \
     -s $FASTA \
     $GDARCHIVE \
     --verbose
