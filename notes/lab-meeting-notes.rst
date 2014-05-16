@@ -82,3 +82,9 @@ Lab meeting
   isolation of DNA with photoproducts by antibody enrichment.
 
 + using UVB laser diode to irradiate.
+
+Sally Update Talk
+-----------------
+:Date:  Thu Apr 24 12:50:06 MDT 2014
+
++  

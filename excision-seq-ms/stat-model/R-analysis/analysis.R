@@ -1,4 +1,5 @@
 library(dplyr)
+library(plyr)
 library(ggplot2)
 
 colnames = c('chrom','start','end','timing','exseq')
@@ -17,7 +18,7 @@ gp <- ggplot(tbl, aes(x = timing, y = exseq,
                   group = round_any(timing, 3)))
 
 # boxplot per Trep
-gp + geom_boxplot(fill='grey') +
+gp + geom_boxplot(fill='grey',notch=TRUE) +
       ggtitle('Raghu / post-dig uracil Ex-seq') + 
       xlab('Trep') + 
       ylab('Ex-seq signal') + 
