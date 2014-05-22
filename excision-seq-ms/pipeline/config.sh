@@ -13,6 +13,7 @@ CHROM_SIZES=$HOME/ref/genomes/$ASSEMBLY/$ASSEMBLY.chrom.sizes
 FASTA=$HOME/ref/genomes/$ASSEMBLY/$ASSEMBLY.fa
 RESULT=$PROJECT/results/$ASSEMBLY
 LOG=$PROJECT/log
+GDARCHIVE="$RESULT/genomedata/exseq.ms.genomedata"
 
 # from modmap pipeline
 BIN=$HOME/devel/modmap/modmap

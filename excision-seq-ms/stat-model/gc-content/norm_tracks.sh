@@ -31,7 +31,8 @@ for winsize in ${window_sizes[@]}; do
     for strand in ${strands[@]}; do
 
         bedgraph=$bedgraphdir/$sample.strand.$strand.counts.bg.gz
-        normbg="$outdir/$sample.win.$winsize.gcnorm.bg"
+        normbg=$outdir/$sample.win.$winsize.strand.$strand.gcnorm.bg
+        normbw=$outdir/$sample.win.$winsize.strand.$strand.counts.bw
 
         bedtools makewindows -g $CHROM_SIZES -w $winsize \
             | bedtools nuc -fi $FASTA -bed - \
@@ -40,6 +41,7 @@ for winsize in ${window_sizes[@]}; do
             | awk '$5 > 0' \
             | awk 'BEGIN {OFS="\t"} {print $1,$2,$3, $5*$4}' \
             > $normbg
+        bedGraphToBigWig $normbg $CHROM_SIZES $normbw
     done
 done
 

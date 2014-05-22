@@ -38,6 +38,42 @@ Suzi
 
 - Borornate depletion of NTPs from mixtures.
 
+Lab Meeting (with Johnson lab)
+------------------------------
+
+:Date: 2014 Mar 25
+
+Alexis Z. Sirtuin Heterochromatin puts a block during DNA replication.
+
+DNA replication, cell cycle picture
+
+Euk DNA replication initiation. Origin licensing, origin unwinding by
+(Cdc54-Mcm2-7-GINS) -> origin fires. Players suggest only interested in
+lagging strand?
+
+Chromatin structs challenge the fork. No fork on the slide. eu/hetero pic
+not that useful.
+
+
+SIR complex. Heterochrom formation and maintenance.
+
+ 1. recruitment
+ 2. deacetylation
+ 3. propagation
+
+
+In vitro reconsitution of euk replication initiation. Recotnstitue  the
+pre-RC, add DDK + S-phase extract are recruited
+
+Look at heterochromatin formation +/- Sir2. Mcm10 recruitment is reduced
+on heterochromatin templates.
+
+Kerri. 5'-OH cloning in humans
+
+-ligase, +RT controls depending on number of PCR cycles.
+
+Human samples from Biochain. 
+=======
 Lab meeting
 -----------
 
@@ -81,6 +117,10 @@ Lab meeting
 
 + using UVB laser diode to irradiate.
 
+Sally Update Talk
+-----------------
+:Date:  Thu Apr 24 12:50:06 MDT 2014
+
 Lab meeting
 -----------
 :Date: Fri Apr 18 09:37:09 MDT 2014
@@ -98,4 +138,3 @@ Lab meeting
 
 + Monica does methylation / demethylation
 
-+ 
